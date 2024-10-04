@@ -77,7 +77,7 @@ class Cliente {
        return false;
     }   
 
-    public funtion consultar(){
+    public function consultar(){
         $query = "SELECT * FROM cliente WHERE id=:id";
         $stmt = $this->conexao->prepare($query);
         $stmt->bindParam(":id", $this->id);
