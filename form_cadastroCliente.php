@@ -1,23 +1,47 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulário de Cadastro</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
 </head>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Cadastro de Cliente</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado"
+        aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+</nav>
+
+
 <body>
-    <h3>Cadastro de Cliente</h3>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <div class="container mt-5">
         <form method="POST" action="cadastroCliente.php">
-            <p>Nome: <input type="text" name="nome" required> </p>
-            <p>Telefone: <input type="text" name="telefone" required> </p>
-            <p>Email: <input type="text" name="email" required> </p>
-            <p>CPF: <input type="text" name="cpf" required> </p>
-            <p> <button type="submit">Cadastrar</button> </p>
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" class="form-control" placeholder="Digite seu nome" name="nome" required>
+            </div>
+            <div class="form-group">
+                <label for="telefone">Telefone:</label>
+                <input type="text" class="form-control" placeholder="Digite seu telefone" name="telefone" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" placeholder="Digite seu email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="cpf">CPF:</label>
+                <input type="text" class="form-control" placeholder="Digite seu CPF" name="cpf" required>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-success">Cadastrar</button>
+            </div>
         </form>
+    </div>
 </body>
+
 </html>
-
-
