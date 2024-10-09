@@ -9,11 +9,11 @@
 
     $cliente->setId($_POST['id']);
     $cliente->setNome($_POST['nome']);
-    $cliente->setEmail($_POST['email']);
     $cliente->setTelefone($_POST['telefone']);
+    $cliente->setEmail($_POST['email']);
     $cliente->setCPF($_POST['cpf']);
 
-        If($cliete->update()){
+        If($cliente->update()){
             echo "Cliente atualizado com sucesso!";
             header("Refresh:3;url=listarCliente.php");
         }else{
