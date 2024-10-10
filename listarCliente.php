@@ -19,49 +19,43 @@ $clientes = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <title>Lista de Clientes</title>
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
 </head>
-<nav style="background-color: #e3f2fd;" class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Lista de Clientes</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado"
-        aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-</nav>
 
 <body>
-    <div class="container">
-        <table class="table">
-            <thead class="thead-dark">
-                <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Nome</th>
-                    <th scope="col">Telefone</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">CPF</th>
-                    <th scope="col">Ações</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($clientes as $cliente) { ?>
-                    <tr>
-                        <td><?php echo $cliente['id']; ?></td>
-                        <td><?php echo $cliente['nome']; ?></td>
-                        <td><?php echo $cliente['telefone']; ?></td>
-                        <td><?php echo $cliente['email']; ?></td>
-                        <td><?php echo $cliente['cpf']; ?></td>
-                        <td>
-                            <a class="btn btn-primary"
-                                href="form_atualizaCliente.php?id=<?php echo $cliente['id']; ?>">Editar</a>
-                            <a class="btn btn-danger" href="deletaCliente.php?id=<?php echo $cliente['id']; ?>">Excluir</a>
-                        </td>
-                    </tr>
-                <?php }
-                ?>
-            </tbody>
-        </table>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #651b32;">
+        <img src="img/padoca.jpg" width="75" height="75" class="d-inline-block align-top" alt="">
+        <a class="navbar-brand" href="#" style="color: white;">Lista de Pedidos</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado"
+            aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row">
+            <?php foreach ($clientes as $cliente) { ?>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Nome: <?php echo $cliente['nome']; ?></h5>
+                            <p class="card-text">
+                                <strong>Telefone:</strong> <?php echo $cliente['telefone']; ?><br>
+                                <strong>Email:</strong> <?php echo $cliente['email']; ?><br>
+                                <strong>CPF:</strong> <?php echo $cliente['cpf']; ?>
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="form_atualizaCliente.php?id=<?php echo $cliente['id']; ?>"
+                                class="btn btn-primary">Editar</a>
+                            <a href="deletaCliente.php?id=<?php echo $cliente['id']; ?>" class="btn btn-danger">Excluir</a>
+                        </div>
+                    </div>
+                </div>
+            <?php } ?>
+        </div>
+
         <div class="text-center mt-4">
-            <a href="form_cadastroCliente.php" class="btn btn-success">Cadastrar Novo Cliente</a>
+            <a href="form_cadastroCliente.php" class="btn btn-success">Cadastrar Novo Pedido</a>
         </div>
     </div>
 </body>
-
 </html>
