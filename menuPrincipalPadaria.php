@@ -7,18 +7,6 @@
     <title>Padoca</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
-
-    <style>
-        .carousel-item img {
-            width: 100%;
-            height: 550px;
-            object-fit: cover;
-        }
-
-        .card {
-            margin: 15px 0;
-        }
-    </style>
 </head>
 
 <body>
@@ -60,21 +48,21 @@
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="d-block w-100" src="img/1.jpg" alt="Primeira Foto">
+                    <img class="d-block w-100" src="img/1.jpg" style="width: 100%; height: 550px; object-fit: cover;" alt="Primeira Foto">
                     <div class="carousel-caption d-none d-md-block">
                         <h2>Variedade de Produtos</h2>
                         <h4>Mais de 70 opções entre doces e salgados</h4>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="img/2.jpg" alt="Segunda Foto">
+                    <img class="d-block w-100" src="img/2.jpg" style="width: 100%; height: 550px; object-fit: cover;" alt="Segunda Foto">
                     <div class="carousel-caption d-none d-md-block">
                         <h2>Atendimento Especializado</h2>
                         <h4>Contamos com atendentes com a formação específica para o melhor atendimento</>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="img/3.jpg" alt="Terceira Foto">
+                    <img class="d-block w-100" src="img/3.jpg"  style="width: 100%; height: 550px; object-fit: cover;" alt="Terceira Foto">
                     <div class="carousel-caption d-none d-md-block">
                         <h2>Faça sua encomenda!</h2>
                         <h4>Nossa equipe está à disposição para tornar seu sonho realidade</h4>
@@ -122,7 +110,7 @@
     <div class="container mt-4">
         <div class="row justify-content-center">
             <div class="col-md-4">
-                <div class="card mb-3 shadow-sm" style="border-radius: 15px;">
+                <div class="card mb-3 shadow-sm" style="border-radius: 15px; margin: 15px 0;">
                     <img class="card-img-top" src="img/bolo.jpg" alt="Imagem de capa do card 1"
                         style="border-radius: 15px 15px 0 0;">
                     <div class="card-body">
