@@ -16,10 +16,10 @@
 
 <body>
     <div class="container mt-5">
-        <form method="POST" action="cadastroCliente.php">
+        <form method="POST" action="cadastroProduto.php">
             <div class="form-group">
-                <label for="nome">Produto</label>
-                <input type="text" class="form-control" placeholder="Digite o nome do produto" name="nome" required>
+                <label for="produto">Produto</label>
+                <input type="text" class="form-control" placeholder="Digite o nome do produto" name="produto" required>
             </div>
             <div class="form-group">
                 <label for="telefone">Telefone:</label>

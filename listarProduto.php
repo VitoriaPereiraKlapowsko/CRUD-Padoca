@@ -1,12 +1,13 @@
 <?php
     require 'Banco.php';
-    require 'Cliente.php';
+    require 'Produto.php';
 
     $Banco = new Banco();
     $db = $Banco->getConexao();
-    $cliente = new Cliente($db);
-    $stmt = $cliente->read($db);
-    $clientes = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    $produto = new Produto($db);
+    $stmt = $produto->read($db);
+    $produtos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -27,21 +28,21 @@
 <body>
     <div class="container mt-5">
         <div class="row">
-            <?php foreach ($clientes as $cliente) { ?>
+            <?php foreach ($produtos as $produto) { ?>
                 <div class="col-md-4 mb-4">
                     <div class="card h-100">
                         <div class="card-body">
-                            <h5 class="card-title">Produto: <?php echo $cliente['nome']; ?></h5>
+                            <h5 class="card-title">Produto: <?php echo $produto['produto']; ?></h5>
                             <p class="card-text">
-                                <strong>Telefone:</strong> <?php echo $cliente['telefone']; ?><br>
-                                <strong>Email:</strong> <?php echo $cliente['email']; ?><br>
-                                <strong>CPF:</strong> <?php echo $cliente['cpf']; ?>
+                                <strong>Telefone:</strong> <?php echo $produto['telefone']; ?><br>
+                                <strong>Email:</strong> <?php echo $produto['email']; ?><br>
+                                <strong>CPF:</strong> <?php echo $produto['cpf']; ?>
                             </p>
                         </div>
                         <div class="card-footer">
-                            <a href="form_atualizaCliente.php?id=<?php echo $cliente['id']; ?>"
+                            <a href="form_atualizaProduto.php?id=<?php echo $produto['id']; ?>"
                                 class="btn btn-primary">Editar</a>
-                            <a href="deletaCliente.php?id=<?php echo $cliente['id']; ?>" class="btn btn-danger">Excluir</a>
+                            <a href="deletaProduto.php?id=<?php echo $produto['id']; ?>" class="btn btn-danger">Excluir</a>
                         </div>
                     </div>
                 </div>
@@ -49,7 +50,7 @@
         </div>
 
         <div class="text-center mt-4">
-            <a href="form_cadastroCliente.php" class="btn btn-success">Cadastrar Novo Pedido</a>
+            <a href="form_cadastroProduto.php" class="btn btn-success">Cadastrar Novo Pedido</a>
         </div>
     </div>
 </body>

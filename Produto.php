@@ -1,7 +1,7 @@
 <?php
-class Cliente {
+class Produto {
     private $conexao;
-    private $nome;
+    private $produto;
     private $id;
     private $telefone;
     private $email;
@@ -16,8 +16,8 @@ class Cliente {
         $this->id = $id;
     }
 
-    public function setNome($nome){
-        $this->nome = $nome;
+    public function setProduto($produto){
+        $this->produto = $produto;
     }
 
     public function setCPF($cpf){
@@ -33,9 +33,9 @@ class Cliente {
     }
 
     public function create() {
-        $query = "INSERT INTO cliente SET nome=:nome, telefone=:telefone, email=:email, cpf=:cpf";
+        $query = "INSERT INTO produto SET produto=:produto, telefone=:telefone, email=:email, cpf=:cpf";
         $stmt = $this->conexao->prepare($query);
-        $stmt->bindParam(":nome", $this->nome);
+        $stmt->bindParam(":produto", $this->produto);
         $stmt->bindParam(":telefone", $this->telefone); $stmt->bindParam(":email", $this->email);
         $stmt->bindParam(":cpf", $this->cpf);
         
@@ -45,14 +45,14 @@ class Cliente {
             return false;
     }
     public function read() {
-        $query = "SELECT * FROM cliente";
+        $query = "SELECT * FROM produto";
         $stmt = $this->conexao->prepare($query);
         $stmt->execute();
         
         return $stmt;
     } 
     public function delete() {
-        $query = "DELETE FROM cliente WHERE id=:id";
+        $query = "DELETE FROM produto WHERE id=:id";
         $stmt = $this->conexao->prepare($query);
         $stmt->bindParam(":id", $this->id);
         
@@ -63,9 +63,9 @@ class Cliente {
     }    
 
     public function update() {
-        $query = "UPDATE cliente SET nome=:nome, telefone=:telefone, email=:email, cpf=:cpf WHERE id=:id";
+        $query = "UPDATE produto SET produto=:produto, telefone=:telefone, email=:email, cpf=:cpf WHERE id=:id";
         $stmt = $this->conexao->prepare($query);
-        $stmt->bindParam(":nome", $this->nome);
+        $stmt->bindParam(":produto", $this->produto);
         $stmt->bindParam(":telefone", $this->telefone);
         $stmt->bindParam(":email", $this->email);
         $stmt->bindParam(":cpf", $this->cpf);
@@ -78,7 +78,7 @@ class Cliente {
     }   
 
     public function consultar(){
-        $query = "SELECT * FROM cliente WHERE id=:id";
+        $query = "SELECT * FROM produto WHERE id=:id";
         $stmt = $this->conexao->prepare($query);
         $stmt->bindParam(":id", $this->id);
         $stmt->execute();

@@ -1,19 +1,19 @@
 <?php
     require 'Banco.php';
-    require 'Cliente.php';
+    require 'Produto.php';
 
     $banco = new Banco();
     $conexao = $banco->getConexao();
 
-    $cliente = new Cliente($conexao);
+    $produto = new Produto($conexao);
 
-    $cliente->setId($_POST['id']);
-    $cliente->setNome($_POST['nome']);
-    $cliente->setTelefone($_POST['telefone']);
-    $cliente->setEmail($_POST['email']);
-    $cliente->setCPF($_POST['cpf']);
+    $produto->setId($_POST['id']);
+    $produto->setProduto(produto: $_POST['produto']);
+    $produto->setTelefone($_POST['telefone']);
+    $produto->setEmail($_POST['email']);
+    $produto->setCPF($_POST['cpf']);
 
-    if ($cliente->update()) {
+    if ($produto->update()) {
         $mensagem = "Produto atualizado com sucesso!";
     } else {
         $mensagem = "Erro ao atualizar o produto.";
@@ -40,7 +40,7 @@
 
     <script>
         setTimeout(function () {
-            window.location.href = "listarCliente.php";
+            window.location.href = "listarProduto.php";
         }, 5000); 
     </script>
 </body>

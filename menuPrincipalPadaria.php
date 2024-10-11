@@ -34,7 +34,7 @@
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
-                <a href="form_cadastroCliente.php" class="btn btn-success my-2 my-sm-0">Faça seu pedido</a>
+                <a href="form_cadastroProduto.php" class="btn btn-success my-2 my-sm-0">Faça seu pedido</a>
             </form>
         </div>
     </nav>

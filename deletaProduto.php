@@ -1,20 +1,17 @@
 <?php
     require 'Banco.php';
-    require 'Cliente.php';
+    require 'Produto.php';
 
-    $banco = new Banco();
-    $conexao = $banco->getConexao();
+    $database = new Banco();
+    $db = $database->getConexao();
 
-    $cliente = new Cliente($conexao);
-    $cliente->setNome($_POST['nome']);
-    $cliente->setCPF($_POST['cpf']);
-    $cliente->setTelefone($_POST['telefone']);
-    $cliente->setEmail($_POST['email']);
+    $produto = new Produto($db);
+    $produto->setId($_GET['id']);
 
-    if ($cliente->create()) {
-        $mensagem = "Produto cadastrado com sucesso!";
+    if ($produto->delete()) {
+        $mensagem = "Produto deletado com sucesso!";
     } else {
-        $mensagem = "Erro ao cadastrar o produto.";
+        $mensagem = "Erro ao deletar o produto.";
     }
 ?>
 
@@ -29,18 +26,19 @@
 </head>
 
 <body style="height: 100%; display: flex; justify-content: center; align-items: center;">
-    <div class="container" style="text-align: center; margin-top: 180px;"> 
+    <div class="container" style="text-align: center; margin-top: 180px;">
         <img src="img/relogio.jpg" alt="Logo" style="max-width: 150px; height: auto; margin-bottom: 20px;">
 
         <h3><?php echo $mensagem; ?></h3>
-        <h5>Você será direcionado para a lista de pedidos em instantes...</h5>
+        <h5>Você será direcionado para a lista de produtos em instantes...</h5>
     </div>
 
     <script>
         setTimeout(function () {
-            window.location.href = "listarCliente.php"; 
+            window.location.href = "listarProduto.php";
         }, 5000); 
     </script>
+
 </body>
 
 </html>
