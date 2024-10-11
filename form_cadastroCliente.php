@@ -5,17 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário de Cadastro</title>
+    <title>Formulário de Pedido</title>
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
 </head>
 
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #651b32;">
     <img src="img/padoca.jpg" width="75" height="75" class="d-inline-block align-top" alt="">
-    <a class="navbar-brand" href="#" style="color: white;">Pedidos da Padoca</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado"
-        aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+    <a class="navbar-brand" href="#" style="color: white;">Pedidos Padoca</a>
 </nav>
 
 <body>

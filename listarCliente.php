@@ -1,13 +1,12 @@
 <?php
-require 'Banco.php';
-require 'Cliente.php';
+    require 'Banco.php';
+    require 'Cliente.php';
 
-$Banco = new Banco();
-$db = $Banco->getConexao();
-$cliente = new Cliente($db);
-$stmt = $cliente->read($db);
-$clientes = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
+    $Banco = new Banco();
+    $db = $Banco->getConexao();
+    $cliente = new Cliente($db);
+    $stmt = $cliente->read($db);
+    $clientes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -16,20 +15,16 @@ $clientes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Clientes</title>
+    <title>Lista de Pedidos</title>
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
 </head>
 
-<body>
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #651b32;">
-        <img src="img/padoca.jpg" width="75" height="75" class="d-inline-block align-top" alt="">
-        <a class="navbar-brand" href="#" style="color: white;">Lista de Pedidos</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado"
-            aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    </nav>
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #651b32;">
+    <img src="img/padoca.jpg" width="75" height="75" class="d-inline-block align-top" alt="">
+    <a class="navbar-brand" href="#" style="color: white;">Lista de Pedidos</a>
+</nav>
 
+<body>
     <div class="container mt-5">
         <div class="row">
             <?php foreach ($clientes as $cliente) { ?>
@@ -58,4 +53,5 @@ $clientes = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </div>
     </div>
 </body>
+
 </html>

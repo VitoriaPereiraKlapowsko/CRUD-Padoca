@@ -14,9 +14,9 @@
     $cliente->setCPF($_POST['cpf']);
 
     if ($cliente->update()) {
-        $mensagem = "Cliente atualizado com sucesso!";
+        $mensagem = "Produto atualizado com sucesso!";
     } else {
-        $mensagem = "Erro ao atualizar o cliente.";
+        $mensagem = "Erro ao atualizar o produto.";
     }
 ?>
 
@@ -26,7 +26,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Refresh</title>
+    <title>Redirecionamento</title>
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
 </head>
 
@@ -35,13 +35,14 @@
         <img src="img/relogio.jpg" alt="Logo" style="max-width: 150px; height: auto; margin-bottom: 20px;">
 
         <h3><?php echo $mensagem; ?></h3>
-        <h5>Você será direcionado para a lista de clientes em instantes...</h5>
+        <h5>Você será direcionado para a lista de produtos em instantes...</h5>
     </div>
 
     <script>
-        setTimeout(function() {
-            window.location.href = "listarCliente.php"; 
+        setTimeout(function () {
+            window.location.href = "listarCliente.php";
         }, 5000); 
     </script>
 </body>
+
 </html>

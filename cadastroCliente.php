@@ -1,21 +1,21 @@
 <?php
-require 'Banco.php';
-require 'Cliente.php';
+    require 'Banco.php';
+    require 'Cliente.php';
 
-$banco = new Banco();
-$conexao = $banco->getConexao();
+    $banco = new Banco();
+    $conexao = $banco->getConexao();
 
-$cliente = new Cliente($conexao);
-$cliente->setNome($_POST['nome']);
-$cliente->setCPF($_POST['cpf']);
-$cliente->setTelefone($_POST['telefone']);
-$cliente->setEmail($_POST['email']);
+    $cliente = new Cliente($conexao);
+    $cliente->setNome($_POST['nome']);
+    $cliente->setCPF($_POST['cpf']);
+    $cliente->setTelefone($_POST['telefone']);
+    $cliente->setEmail($_POST['email']);
 
-if ($cliente->create()) {
-    $mensagem = "Cliente cadastrado com sucesso!";
-} else {
-    $mensagem = "Erro ao cadastrar o cliente.";
-}
+    if ($cliente->create()) {
+        $mensagem = "Produto cadastrado com sucesso!";
+    } else {
+        $mensagem = "Erro ao cadastrar o produto.";
+    }
 ?>
 
 <!DOCTYPE html>
@@ -24,7 +24,7 @@ if ($cliente->create()) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Refresh</title>
+    <title>Redirecionamento</title>
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
 </head>
 
@@ -33,7 +33,7 @@ if ($cliente->create()) {
         <img src="img/relogio.jpg" alt="Logo" style="max-width: 150px; height: auto; margin-bottom: 20px;">
 
         <h3><?php echo $mensagem; ?></h3>
-        <h5>Você será direcionado para a lista de clientes em instantes...</h5>
+        <h5>Você será direcionado para a lista de pedidos em instantes...</h5>
     </div>
 
     <script>
