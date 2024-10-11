@@ -31,7 +31,7 @@
                 <div class="col-md-4 mb-4">
                     <div class="card h-100">
                         <div class="card-body">
-                            <h5 class="card-title">Nome: <?php echo $cliente['nome']; ?></h5>
+                            <h5 class="card-title">Produto: <?php echo $cliente['nome']; ?></h5>
                             <p class="card-text">
                                 <strong>Telefone:</strong> <?php echo $cliente['telefone']; ?><br>
                                 <strong>Email:</strong> <?php echo $cliente['email']; ?><br>

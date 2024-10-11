@@ -39,7 +39,7 @@
                         <input type="hidden" name="id" value="<?php echo $clienteSelecionado['id']; ?>">
                         <div class="form-row">
                             <div class="col-md-12 mb-3">
-                                <label for="nome">Nome:</label>
+                                <label for="nome">Produto:</label>
                                 <input type="text" class="form-control" name="nome" id="nome"
                                     value="<?php echo $clienteSelecionado['nome']; ?>" required>
                             </div>
